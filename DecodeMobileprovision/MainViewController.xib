@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MainViewController">
+            <connections>
+                <outlet property="OutputButton" destination="fq5-X1-H3g" id="ww2-jy-wgL"/>
+                <outlet property="PathLabel" destination="thz-kr-iju" id="TkZ-f6-9h6"/>
+                <outlet property="dragView" destination="E5P-SE-evJ" id="HhJ-u2-VAs"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E5P-SE-evJ" customClass="ZXDragView">
+                    <rect key="frame" x="0.0" y="114" width="480" height="246"/>
+                    <gestureRecognizers>
+                        <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="Orh-0j-BSw">
+                            <connections>
+                                <action selector="ClickAction:" target="-2" id="mAn-A3-Qcw"/>
+                            </connections>
+                        </clickGestureRecognizer>
+                    </gestureRecognizers>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="addimage" id="zCn-P1-N2s"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xwS-kb-4lj">
+                    <rect key="frame" x="68" y="165" width="346" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Click or Drag mobileprovision file into this View" id="6gw-gk-52E">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Szw-Ig-Esa">
+                    <rect key="frame" x="-2" y="78" width="484" height="28"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" placeholderString="" id="thz-kr-iju">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fq5-X1-H3g">
+                    <rect key="frame" x="183" y="33" width="113" height="32"/>
+                    <buttonCell key="cell" type="push" title="Output Plist" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="H4f-PI-4GO">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="OutputAction:" target="-2" id="Ebs-Y9-8LU"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u3q-aB-3jn">
+                    <rect key="frame" x="183" y="-1" width="113" height="32"/>
+                    <buttonCell key="cell" type="push" title="Websites" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="ESe-34-Fl4">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="OpenWebsites:" target="-2" id="Rcg-Gu-GmM"/>
+                    </connections>
+                </button>
+            </subviews>
+            <point key="canvasLocation" x="573" y="332"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="addimage" width="347" height="154.5"/>
+    </resources>
+</document>
